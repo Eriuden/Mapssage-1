@@ -1,0 +1,22 @@
+Un site qui répertorie les salons de massage en france
+Il faudrait une carte intéractive 
+et/ou un système de recherche par ville, dans un certain rayon
+celà afin d'affiner les résultats
+pas de résultats avant histoire d'éviter de trop afficher
+
+
+Les utilisateurs on fait comme d'hab, les cartes des salons
+marcheront exactement comme des posts
+Pour le modèle il faudra 
+
+L'id
+Le nom
+L'adresse
+Le code postal
+La ville 
+Le type de clientèle (homme, femme, ou mixte)
+Si le salon comporte des masseuses, masseur ou mixte 
+Les types de massages (il peut en avoir plusieurs)
+une description qui aiguillera surtout les prestations et tarifs
+Un système de notation à base d'étoiles, surement simple à trouver sur google 
+Un système de commentaires, voir si on peut même ajouter des réponses
