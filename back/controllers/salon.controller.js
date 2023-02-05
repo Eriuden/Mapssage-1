@@ -31,6 +31,33 @@ module.exports.getSalon = async (req,res) => {
             )
         )
     }
+}
+
+module.exports.createSalon = async (req,res) => {
+    
+    if (req.file !=null) {
+       try {
+        if (
+            req.file.detectedMimeType != "image/jpg" &&
+            req.file.detectedMimeType != "image/png" &&
+            req.file.detectedMimeType != "image/jpeg"
+        )
+            throw Error("invalide file")
+
+        if (req.file.size > 500000) throw Error("taille maximale dépassée")
+       } catch (err) {
+        const errors = uploadErrors(err)
+        return res.status(201).json({errors})
+       }
+        fileName = req.body.posterId + Date.now() + ".jpg"
+
+        await pipeline(
+            req.file.stream,
+            fs.createWriteStream(
+                `${__dirname}*client/public/uploads/salonImage/${fileName}`
+            )
+        )
+    }
 
     const newSalon = new salonModel({
         name: req.body.name,
@@ -50,6 +77,7 @@ module.exports.getSalon = async (req,res) => {
     } catch(err) {
         return res.status(400).send(err)
     }
+    
 }
 
 module.exports.updateSalon = (req,res) => {
@@ -87,7 +115,7 @@ module.exports.deleteSalon = (req, res) => {
     })
 }
 
-module.exports.likeSalon = async (req,res) => {
+module.exports.favSalon = async (req,res) => {
     if (!ObjectId.isValid(req.params.id))
     return res.status(400).send("ID unknown:" + req.params.id)
 
@@ -118,7 +146,7 @@ module.exports.likeSalon = async (req,res) => {
     }
 }
 
-module.exports.unlikeSalon = async (req,res) => {
+module.exports.unfavSalon = async (req,res) => {
     if (!ObjectId.isValid(req.params.id))
     return res.status(400).send(" ID unknown : " + req.params.id)
 
