@@ -61,6 +61,8 @@ module.exports.fav = async (req,res) => {
         await userModel.findByIdAndUpdate(
             req.params.id, 
 
+            //On crée ICI l'idToFollow, il ajoute donc au set
+            //cet élément et le fait correspondre à favorites
             { $addToSet: { favorites: req.body.idToFollow }},
             { new:true, upsert:true},
             (err,docs) => {
@@ -68,6 +70,12 @@ module.exports.fav = async (req,res) => {
                 else return res.status(400).json(err)
             }
         )
+
+        //Ici on se mets du côté du salon, donc du receveur,
+        //ergo, on inverse la place des deux id concernées
+        // comme l'info ne concerne pas l'user, pas besoin
+        //de renvoyer le status 201
+        
         await salonModel.findByIdAndUpdate(
             req.body.idToFollow,
 

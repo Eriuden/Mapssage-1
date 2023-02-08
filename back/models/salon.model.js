@@ -53,10 +53,6 @@ const salonSchema = mongoose.Schema(
             required: true 
         },
 
-        gender: {
-            type: String,
-            required: true
-        },
 
         //faire une notation en étoile
 

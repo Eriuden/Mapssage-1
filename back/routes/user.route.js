@@ -16,5 +16,10 @@ router.get("/:id", authController.getUser)
 router.put("/:id", userController.updateUser)
 router.delete("/:id", userController.deleteUser)
 
-//Continuer et faire le système de follow
 
+
+router.patch("/fav-salon/:id", userController.fav)
+router.patch("/unfav-salon/:id", userController.unfav)
+
+router.post('/upload',upload.single("file"), uploadController.uploadProfil)
+module.exports = router
