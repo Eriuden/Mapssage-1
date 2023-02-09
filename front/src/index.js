@@ -9,8 +9,8 @@ import { applyMiddleware } from 'redux';
 import thunk from "redux-thunk";
 import { configureStore} from "@reduxjs/toolkit";
 import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
-import { getUsers } from './redux/actions/users.reducer';
-import { getSalons } from './redux/actions/salons.reducer';
+import { getUsers } from './redux/actions/users.action';
+import { getSalons } from './redux/actions/salons.action';
 
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunk))
