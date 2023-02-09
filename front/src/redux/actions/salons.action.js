@@ -1,3 +1,10 @@
+/*Rappelons le principe d'une action
+ elle sera appelée dans le reducer lors d'un switch case, où sera indiqué le reste de la marche à suivre
+ ici, il s'agit en quelque sorte d'effectuer un routing vers la fonctionnalité dans le back
+ on rajoute les données dont l'action aura besoin, à l'aide des params qu'on fera correspondre plus tard aux éléments du model
+ (en gros éléments1 = action.payload.params1 )*/
+
+
 import axios from "axios";
 
 export const GET_SALONS = "GET_SALONS"
