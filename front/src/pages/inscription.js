@@ -52,7 +52,7 @@ export default function Inscription() {
   }
 
   return (
-    <div>
+    <div className ="flex flex-col">
       <>
         {formSubmit ? (
           <>
@@ -60,28 +60,32 @@ export default function Inscription() {
             <Connexion/>
           </>
         ): (
-          <form action='' onSubmit={handleRegister}>
-            <label htmlFor='name'>Votre nom</label>
-              <input type="text" name='name' id='name' value={name} onChange={(e)=> setName(e.target.value)}/>
+          <form action='' onSubmit={handleRegister} className=" bg-slate-50 flex flex-col border-2 border-l-4 rounded-md border-black mx-12 my-4 md:mx-[20%] lg:mx-[20%]">
+            <label htmlFor='name' className='my-2'>Votre nom</label>
+              <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%] lg:mx-[30%]'
+               type="text" name='name' id='name' value={name} onChange={(e)=> setName(e.target.value)}/>
             <div className='name error'></div>
 
-            <label htmlFor='email'>Votre email</label>
-              <input type="text" name='email' id='email' value={email} onChange={(e)=> setEmail(e.target.value)}/>
+            <label htmlFor='email' className='my-2'>Votre email</label>
+              <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%] lg:mx-[30%]'
+               type="text" name='email' id='email' value={email} onChange={(e)=> setEmail(e.target.value)}/>
             <div className='email error'></div>
 
-            <label htmlFor='password'>Votre mot de passe</label>
-              <input type="password" name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <label htmlFor='password' className='my-2'>Votre mot de passe</label>
+              <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%] lg:mx-[30%]'
+               type="password" name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
             <div className='password error'></div>
 
-            <label htmlFor='password-conf'>Confirmez votre mot de passe</label>
-              <input type="password" name='password-conf' id='password-conf' value={passwordConf} onChange={(e) => setPasswordConf(e.target.value)}/>
+            <label htmlFor='password-conf' className='my-2'>Confirmez votre mot de passe</label>
+              <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%] lg:mx-[30%]'
+               type="password" name='password-conf' id='password-conf' value={passwordConf} onChange={(e) => setPasswordConf(e.target.value)}/>
             <div className='password-conf error'></div>
 
-            <label htmlFor='terms'>J'accepte les <a className='underline' href="/" target="_blank" rel="noopener noreferrer">conditions générales</a></label>
+            <label htmlFor='terms' className=' mx-8 my-2 md:mx-12'>J'accepte les <a className='underline' href="/" target="_blank" rel="noopener noreferrer">conditions générales</a></label>
               <input type="checkbox" id='terms' />
             <div className='terms error'></div>
             
-            <input type="submit" value="inscription"/>
+            <input type="submit" className='border-2 border-black my-2 mx-[25%] xs:mx-[40%] sm:mx-[42%] md:mx-[40%] lg:mx-[43%] xl:mx-[43%] 2xl:mx-[43%]' value="inscription"/>
 
           </form>
         )}     
