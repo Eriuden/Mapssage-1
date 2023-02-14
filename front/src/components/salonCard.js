@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function salonCard() {
+export default function SalonCard() {
   return (
     <div>salonCard</div>
   )
