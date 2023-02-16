@@ -17,11 +17,11 @@ export default function Header() {
    
   return (
     <div>
-      <div className='bg-gradient-to-r from-cyan-300  via-slate-50 to-purple-300 mb-0'>
+      <div className='bg-gradient-to-r from-purple-300 mb-0'>
         <h1 className='mb-3'>Mapssage</h1>
       </div>
 
-      <nav className='hidden bg-gradient-to-r from-cyan-300 via-slate-50 to-purple-300 flex-row justify-around mt-0 sm:flex '>
+      <nav className='hidden bg-gradient-to-r from-purple-300 flex-row justify-around mt-0 sm:flex '>
         <Link to={"/"}>Acceuil</Link>
         { uid ? (
           <>
