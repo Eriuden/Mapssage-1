@@ -23,6 +23,12 @@ const salonSchema = mongoose.Schema(
             required: true 
         },
 
+        picture: {
+            type: String,
+            default: "../client/public/uploads/salonImages/random-salon.jpg",
+            required: true
+        },
+
         address: {
             type:String,
             required: true 

@@ -9,9 +9,12 @@ import Logout from './Logout'
 
 export default function Header() {
   const [ hamburger, setHamburger] = useState(false)
+  const [ search, setSearch] = useState("")
   const uid= useContext(UidContext)
   const userData = useSelector((state) => state.userReducer)
 
+  //améliorer la recherche pour ce projet, en faire un à sa place, EN HEADER
+   
   return (
     <div>
       <div className='bg-gradient-to-r from-cyan-300  via-slate-50 to-purple-300 mb-0'>
@@ -21,13 +24,19 @@ export default function Header() {
       <nav className='hidden bg-gradient-to-r from-cyan-300 via-slate-50 to-purple-300 flex-row justify-around mt-0 sm:flex '>
         <Link to={"/"}>Acceuil</Link>
         { uid ? (
-          <Link to={"/user-profile/:id"}>
-            <h5>Bienvenue{userData.name}</h5>
-          </Link>
+          <>
+            <Link to={"/user-profile/:id"}>
+              <h5>Bienvenue{userData.name}</h5>
+            </Link>
+
+            <Logout/>
+          </>
         ): (
           <>
             <Link to={"/connexion"}>Connexion</Link>
             <Link to={"/inscription"}>Inscription</Link>
+
+            
           </>
         )}
       </nav>
@@ -42,9 +51,13 @@ export default function Header() {
 
         <Link className='mx-1' to={"/"}>Acceuil</Link>
         { uid ? (
-          <Link className='mx-1' to={"/user-profile/:id"}>
-            <h5>Bienvenue{userData.name}</h5>
-          </Link>
+          <>
+            <Link className='mx-1' to={"/user-profile/:id"}>
+              <h5>Bienvenue{userData.name}</h5>
+            </Link>
+
+            <Logout/>
+          </>
         ): (
           <>
             <Link className='mx-1' to={"/connexion"}>Connexion</Link>
@@ -53,6 +66,17 @@ export default function Header() {
         )}
       </nav>
       ):""}
+
+      < div className=''>
+        <form action='' className='my-4'>
+          <input type="text" className='border-2 border-black mx-2'
+           placeholder='Entrez un nom de salon' id="search-input"
+           onChange={(e)=> setSearch(e.target.value)} value={search}/>
+           
+           <input type="submit" value="rechercher" className='border-2 border-black rounded-md px-2'/>
+           
+        </form>
+      </div>
     </div>
   )
 }
