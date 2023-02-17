@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch, useSelector } from 'react-redux'
 import { isEmpty } from '../utils'
+import DeleteCard from './DeleteCard'
+import FavButton from './FavButton'
 
 
 /* Réserver l'update et le delete à la vraie page*/
@@ -14,7 +16,8 @@ import { isEmpty } from '../utils'
 export default function SalonCard({salonProps}) {
   const [isLoading, setIsLoading] = useState(true)
   const salonsData = useSelector((state)=> state.salonsReducer)
-  const salonData = useSelector((state)=> state.salonReducer)
+  const userData = useSelector((state)=> state.userReducer)
+  
 
   useEffect(() => {
     !isEmpty(salonsData[0]) && setIsLoading(false)
@@ -50,6 +53,18 @@ export default function SalonCard({salonProps}) {
           </div>
         </>
       )}
+      {
+        userData._id === salon.ownerId && (
+          <DeleteCard id={salonProps.id}/>
+        )
+      }
+      
+      <div className='card-footer'>
+        <FavButton favProps={salonProps}/>
+      </div>
+      
     </div>
   )
 }
+
+//Après deleteCard, mettre une moyenne des étoiles et le bouton fav
