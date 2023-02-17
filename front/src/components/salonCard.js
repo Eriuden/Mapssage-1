@@ -67,4 +67,4 @@ export default function SalonCard({salonProps}) {
   )
 }
 
-//Après deleteCard, mettre une moyenne des étoiles et le bouton fav
+//Après le bouton de fav, mettre une moyenne des étoiles, et voir comment aussi mettre le bouton de notation sans que ça fasse trop 
