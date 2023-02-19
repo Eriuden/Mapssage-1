@@ -6,7 +6,7 @@ import DeleteCard from './DeleteCard'
 import FavButton from './FavButton'
 
 
-/* Réserver l'update et le delete à la vraie page*/
+/* Réserver l'update*/
 //pas le même css que la page, raison de praticité, nom puis photo en collone
 
 //Pourquoi salonsData et pas salonData
@@ -67,4 +67,4 @@ export default function SalonCard({salonProps}) {
   )
 }
 
-//Après deleteCard, mettre une moyenne des étoiles et le bouton fav
+//Après le bouton de fav, mettre une moyenne des étoiles, et voir comment aussi mettre le bouton de notation sans que ça fasse trop 
