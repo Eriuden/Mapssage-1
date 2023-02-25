@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState} from 'react'
 import { UidContext } from './appContext'
 import { favSalon, unFavSalon } from '../redux/actions/salons.action'
 import { useDispatch } from 'react-redux'
-import salonModel from '../../../back/models/salon.model'
+
 
 export default function FavButton({favProps}) {
     const [favorite, setFavorite] = useState(false)

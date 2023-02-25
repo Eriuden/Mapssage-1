@@ -21,7 +21,7 @@ export default function Header() {
       setSearch(e.currentTarget.value)
       if(search.length > 0){
           getSalons(search)
-          .then(res=>{
+          .then((res)=>{
               getSalons(res.results);
           })
       }
