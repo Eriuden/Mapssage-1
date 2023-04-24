@@ -24,7 +24,7 @@ export const GET_SALON_ERRORS = "GET_SALON_ERROR"
 export const getSalons = () => {
     return (dispatch) => {
         return axios 
-        .get(`${process.env.REACT_APP_API_URL}/api/salon`)
+        .get(`${process.env.REACT_APP_API_URL}api/salon`)
         .then((res) => {
             const array = res.data.slice(0,num)
             dispatch({type: GET_SALON, payload: array})

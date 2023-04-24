@@ -1,4 +1,4 @@
-const { model } = require("mongoose")
+
 const salonModel = require("../models/salon.model")
 const userModel = require ("../models/user.model")
 const ObjectId = require("mongoose").Types.ObjectId
