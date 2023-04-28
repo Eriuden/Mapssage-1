@@ -5,12 +5,14 @@ import SalonCard from './salonCard'
 
 export default function SearchResult({SearchProps}) {
 
+  const [salonsData, setSalonsData] = useState([])
+
   const dispatch = useDispatch()
+
   useEffect(()=> {
     dispatch(getSalons)
-  })
+  }, setSalonsData(res.data.results))
 
-  const [salonsData, setSalonsData] = useState([])
   return (
     <div>
       {salonsData.slice(0,20)
