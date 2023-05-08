@@ -149,7 +149,7 @@ export const editComment = (salonId, commentId, text) => {
     }
 }
 
-export const deleteComment = (salonId, commentId) => {
+export const deleteComment = (salonId, commentId, text) => {
     return (dispatch) => {
         return axios({
             method: "delete",

@@ -23,7 +23,7 @@ export default function Comments({commentProps}) {
 // Note à moi même, l'idée de nommer les props commentProps peut porter à confusion
   return (
     <div>
-      {commentProps.Comments.map((comment)=> {
+      {commentProps.comments.map((comment)=> {
         return(
           <div key={comment._id}>
             <div>
@@ -45,6 +45,26 @@ export default function Comments({commentProps}) {
           </div>  
         )
       })}
+
+{
+        /*
+        Le formulaire qui permet d'envoyer le commentaire
+        Oubli rectifié, un autre intérêt de la veille et de l'autocorrection ^^
+        */
+        userData._id && (
+          <form action="" onSubmit={{ handleComment }}>
+            <input
+              type="text"
+              name="text"
+              onChange={(e) => setText(e.target.value)}
+              value={text}
+              placeholder="laisser un commentaire"
+            />
+            <br />
+            <input type="submit" value="Envoyer" />
+          </form>
+        )
+      }
     </div>
   )
 }
